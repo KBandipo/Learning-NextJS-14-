@@ -1,11 +1,12 @@
 import Link from "next/link";
-
-export default function Home() {
+export default function DynamicPages({ params }) {
   return (
-    <main>
-      <h1 style={{ color: "white", textAlign: "center" }}>
-        Time to get started!
-      </h1>
+    <>
+      <h2>DynamicPages </h2>
+      <p>{params.mealSlug}</p>
+      <p>
+        <Link href="/">Root Page</Link>
+      </p>
       <p>
         <Link href="/meals">Meal Page</Link>
       </p>
@@ -15,9 +16,6 @@ export default function Home() {
       <p>
         <Link href="/community">Community Page</Link>
       </p>
-      <p>
-        <Link href="/meals/hjhhj">Meal Page</Link>
-      </p>
-    </main>
+    </>
   );
 }
